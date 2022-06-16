@@ -24,5 +24,7 @@ services:
       - "4443:4443"
       - "4444:4444"
 `
-** SE_NODE_MAX_INSTANCES=4 --> change this numbers to test
-** SE_NODE_MAX_SESSIONS=4  --> change this numbers to test
+
+
+** SE_NODE_MAX_INSTANCES=4 --> change this numbers to test **
+** SE_NODE_MAX_SESSIONS=4  --> change this numbers to test **

@@ -1,5 +1,7 @@
 # docker-parallelNodes
 
+## creating concurrency
+
 ![parallel_run_chrome](https://user-images.githubusercontent.com/71812190/174052246-fca20a1c-5ff3-492c-a035-9a71aa97aee9.PNG)
 
 
@@ -31,7 +33,7 @@ services:
 
 **SE_NODE_MAX_SESSIONS=4  --> change this numbers to test**
 
-# What if the number of sessions are less than the number of drivers?
+## What if the number of sessions are less than the number of drivers?
 
 The extra drivers will wait in the queue. Once any session is over, it will start excecuting in LIFO .
 

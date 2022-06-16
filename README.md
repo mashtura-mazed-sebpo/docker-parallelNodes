@@ -17,15 +17,19 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - SE_NODE_MAX_INSTANCES=4
-      - SE_NODE_MAX_SESSIONS=4
-    selenium-hub:
+      - SE_NODE_MAX_INSTANCES=5
+      - SE_NODE_MAX_SESSIONS=8
+
+  selenium-hub:
     image: selenium/hub:4.2.0-20220527
     container_name: selenium-hub
     ports:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
+      - "4445:4445"
+
+
 ````
 
 

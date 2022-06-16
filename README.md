@@ -6,6 +6,7 @@
 ![seesion](https://user-images.githubusercontent.com/71812190/174052263-251e2575-1f18-454a-89f2-c603936f39e3.PNG)
 
 ````
+# To execute this docker-compose yml file use `docker-compose -f docker-compose-v3.yml up`
 version: "3"
 services:
   chrome:

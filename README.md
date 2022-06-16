@@ -1,8 +1,11 @@
 # docker-parallelNodes
 
-![parallel_run_chrome](https://user-images.githubusercontent.com/71812190/174050038-fa95bb47-62f9-4ac7-ba18-cdbfbfa4599b.PNG)
+![parallel_run_chrome](https://user-images.githubusercontent.com/71812190/174052246-fca20a1c-5ff3-492c-a035-9a71aa97aee9.PNG)
 
-`
+
+![seesion](https://user-images.githubusercontent.com/71812190/174052263-251e2575-1f18-454a-89f2-c603936f39e3.PNG)
+
+````
 version: "3"
 services:
   chrome:
@@ -23,7 +26,7 @@ services:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
-`
+````
 
 
 **SE_NODE_MAX_INSTANCES=4 --> change this numbers to test**

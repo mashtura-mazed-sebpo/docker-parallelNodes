@@ -1,24 +1,26 @@
 # To execute this docker-compose yml file use `docker-compose -f docker-compose-v3.yml up`
 # Add the `-d` flag at the end for detached execution
 # To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose-v3.yml down`
-version: "3"
-services:
-  chrome:
-    image: selenium/node-chrome:4.2.0-20220527
-    shm_size: 2gb
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-    #  - SE_NODE_MAX_INSTANCES=2
-      - SE_NODE_MAX_SESSIONS=3
-
-  selenium-hub:
-    image: selenium/hub:4.2.0-20220527
-    container_name: selenium-hub
-    ports:
+#dynamic Grid
+vversion: "3"
+  services:
+    node-docker:
+      image: selenium/node-docker:4.0.0-rc-1-prerelease-20210804
+      volumes:
+        - ./assets:/opt/selenium/assets
+        - ./config.toml:/opt/bin/config.toml
+      depends_on:
+        - selenium-hub
+      environment:
+        - SE_EVENT_BUS_HOST=selenium-hub
+        - SE_EVENT_BUS_PUBLISH_PORT=4442
+        - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+        - SE_NODE_MAX_SESSIONS=3
+        - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+    selenium-hub:
+      image: selenium/hub:4.0.0-rc-1-prerelease-20210804
+      container_name: selenium-hub
+      ports:
       - "4444:4444"
 
       # - "4445:4445"

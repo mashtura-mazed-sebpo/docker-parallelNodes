@@ -35,7 +35,7 @@ services:
 
 ## What if the number of sessions are less than the number of drivers?
 
-The extra drivers will wait in the queue. Once any session is over, it will start excecuting in LIFO .
+The extra drivers will wait in the queue. Once any session is over __(Default 300s)__, it will start excecuting in LIFO .
 
 
 ![session_test](https://user-images.githubusercontent.com/71812190/174094168-9bf2f0fe-f09c-465d-988a-b240385e2335.PNG)

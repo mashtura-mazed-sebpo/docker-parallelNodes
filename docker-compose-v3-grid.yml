@@ -13,9 +13,10 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    #  - SE_MAX_SESSION_TIMEOUT=150
       - SE_NODE_MAX_SESSIONS=1
-     # - SE_NODE_MAX_INSTANCES=3 ##doesn't matter for now. Working on it
-     # - SE_NODE_OVERRIDE_MAX_SESSIONS=true ##doesn't matter
+    #  - SE_NODE_MAX_INSTANCES=1
+    #  - SE_NODE_OVERRIDE_MAX_SESSIONS=true
       
 
   selenium-hub:
@@ -25,5 +26,4 @@ services:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
-      
       #### There can be added more enviroment options for services depending upon the cases.

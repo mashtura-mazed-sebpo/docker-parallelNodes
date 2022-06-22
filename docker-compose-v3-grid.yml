@@ -1,6 +1,7 @@
-# To execute this docker-compose yml file use `docker-compose -f docker-compose-v3-dynamic-grid.yml up`
+# To execute this docker-compose yml file use `docker-compose -f docker-compose-v3-grid.yml up` --> to execute exact yml
+# For MulitNodes and Multi session use `docker compose -f docker-compose-v3.yml up --scale chrome=N`; N is #of driver nodes
 # Add the `-d` flag at the end for detached execution
-# To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose-v3-dynamic-grid.yml down`
+# To stop the execution, hit Ctrl+C, and then `docker-compose -f docker-compose-v3-grid.yml down`
 version: "3"
 services:
   chrome:
@@ -12,10 +13,9 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - SE_JAVA_OPTS=XX:ActiveProcessorCount=4
-      - SE_NODE_MAX_SESSIONS=2
-      - SE_NODE_MAX_INSTANCES=3
-      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+      - SE_NODE_MAX_SESSIONS=1
+     # - SE_NODE_MAX_INSTANCES=3 ##doesn't matter for now. Working on it
+     # - SE_NODE_OVERRIDE_MAX_SESSIONS=true ##doesn't matter
       
 
   selenium-hub:
@@ -25,3 +25,5 @@ services:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
+      
+      #### There can be added more enviroment options for services depending upon the cases.

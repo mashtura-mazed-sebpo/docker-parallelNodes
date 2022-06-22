@@ -33,7 +33,7 @@ services:
 
 **SE_NODE_MAX_SESSIONS=4  --> change this numbers to test**
 
-## What if the number of sessions are less than the number of drivers?
+## What if the number of sessions are less than the number of test drivers?
 
 The extra drivers will wait in the queue. Once any session is over __(Default 300s)__, it will start excecuting in LIFO .
 
